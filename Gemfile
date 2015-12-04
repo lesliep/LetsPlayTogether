@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'puma'
 gem 'monban'
 gem 'monban-generators'
+gem 'neat'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -23,6 +24,7 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'refills'
 end
 
 group :test do
