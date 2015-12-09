@@ -8,8 +8,10 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
+      flash[:notice] = "You have successfully signed in."
       redirect_to root_path
     else
+      flash[:notice] = "Wrong email or password."
       render :new
     end
   end

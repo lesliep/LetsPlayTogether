@@ -1,7 +1,19 @@
+
 Given /^I am not signed in$/ do
   visit '/'
 
   expect(page).to have_content 'Sign Up'
+end
+
+Given /^I am a registered user$/ do
+  @user = user
+  create_user
+  click_on 'Log Out'
+end
+
+When /^I fill in the correct credentials$/ do
+  
+  sign_in_user
 end
 
 When /^I click the '([^']+)' button$/ do |link_name|
@@ -10,6 +22,48 @@ When /^I click the '([^']+)' button$/ do |link_name|
   expect(page).to have_content(link_name)
 end
 
+When /^I fill in the wrong credentials$/ do
+  @user.email = 'wrong@email.com'
+  sign_in_user
+end
+
 Then /^I should be taken to the '([^']+)' page$/ do |page_name|
   expect(page).to have_css("h1", text: page_name)
+end
+
+Then /^I should see the message '([^']+)'$/ do |message|
+  expect(page).to have_content message
+end
+
+Then /^I should be signed in$/ do
+  expect(page).to have_content 'You have successfully signed in.'
+end
+
+
+def create_user
+  visit '/'
+  click_link 'Sign Up'
+
+  fill_form
+
+  click_button 'Sign up'
+end
+
+def fill_form
+  fill_in 'Email', with: @user.email
+  fill_in 'Password', with: @user.password
+end
+
+def user
+  @user ||= Struct.new(:email, :password).new('hi@email.com', 'potato')
+end
+
+
+def sign_in_user
+  visit '/'
+  click_link 'Sign In'
+
+  fill_form
+
+  click_button 'Sign in'
 end
