@@ -1,4 +1,4 @@
-
+require 'pry'
 Given /^I am not signed in$/ do
   visit '/'
 
@@ -11,15 +11,23 @@ Given /^I am a registered user$/ do
   click_on 'Log Out'
 end
 
+Given /^I am signed in$/ do
+  visit '/'
+
+  @user = user
+  sign_in_user
+
+  expect(page).to_not have_content 'Sign Up'
+end
+
 When /^I fill in the correct credentials$/ do
   
   sign_in_user
 end
 
 When /^I click the '([^']+)' button$/ do |link_name|
-  click_on link_name
-
   expect(page).to have_content(link_name)
+  click_on link_name
 end
 
 When /^I fill in the wrong credentials$/ do
