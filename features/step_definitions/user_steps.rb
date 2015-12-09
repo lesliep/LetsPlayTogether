@@ -35,6 +35,10 @@ When /^I fill in the wrong credentials$/ do
   sign_in_user
 end
 
+When /^I go to sign up$/ do
+  create_user
+end
+
 Then /^I should be taken to the '([^']+)' page$/ do |page_name|
   expect(page).to have_css("h1", text: page_name)
 end
