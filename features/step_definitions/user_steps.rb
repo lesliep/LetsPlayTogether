@@ -63,11 +63,13 @@ end
 
 def fill_form
   fill_in 'Email', with: @user.email
+  fill_in 'Username', with: @user.username if page.has_content? 'Username'
   fill_in 'Password', with: @user.password
 end
 
 def user
-  @user ||= Struct.new(:email, :password).new('hi@email.com', 'potato')
+  @user ||= Struct.new(:email, :password, :username).new(
+    'hi@email.com', 'potato', 'potato')
 end
 
 
