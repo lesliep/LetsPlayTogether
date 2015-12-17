@@ -20,6 +20,13 @@ Given /^I am signed in$/ do
   expect(page).to_not have_content 'Sign Up'
 end
 
+Given /^I am a signed in user$/ do
+  steps %{
+    Given I am a registered user
+    And I am signed in
+  }
+end
+
 When /^I fill in the correct credentials$/ do
   
   sign_in_user
