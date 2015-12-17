@@ -1,2 +1,7 @@
 <h1>Welcome, <%= current_user.username %></h1>
 <p>Find me in app/views/dashboard/show.html.erb</p>
+
+<% if current_user.profiles.any? %>
+  <h2>My Profiles</h2>
+  <%= render current_user.profiles %>
+<% end %>

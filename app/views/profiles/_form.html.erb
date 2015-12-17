@@ -1,0 +1,12 @@
+<%= form_for @profile do |f| %>
+  <%= f.label :display_name %>
+  <%= f.text_field :display_name %>
+
+  <%= f.label :about %>
+  <%= f.text_area :about %>
+
+  <%= f.label :byline %>
+  <%= f.text_field :byline %>
+
+  <%= f.submit %>
+<% end %>
