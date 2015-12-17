@@ -9,6 +9,8 @@ gem 'puma'
 gem 'monban'
 gem 'monban-generators'
 gem 'neat'
+gem 'figaro'
+gem 'omniauth-twitch'
 
 gem 'jquery-rails'
 gem 'turbolinks'
@@ -20,6 +22,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
   gem 'pry'
+  gem 'factory_girl_rails'
 end
 
 group :development do
