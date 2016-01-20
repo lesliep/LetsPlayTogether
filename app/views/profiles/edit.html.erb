@@ -1,4 +1,13 @@
 <h1>Edit Profile</h1>
 <h2><%= @profile.display_name %></h2>
 
+<div class="verified social-media">
+</div>
+
+<ul class="unverified social-media">
+  <li><%= social_media_button("Twitch") %></li>
+  <li><button class="youtube"></button></li>
+  <li><button class="twitter"></button></li>
+</ul>
+
 <%= render 'form' %>

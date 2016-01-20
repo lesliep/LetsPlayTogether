@@ -10,7 +10,7 @@ When /^I click '([^']+)'$/ do |link_name|
   click_on link_name
 end
 
-Then /^I should be taken to an edit profile page$/ do
+Then /^I should have to verify my (.+) account$/ do |social_media|
   pending
 end
 

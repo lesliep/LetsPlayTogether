@@ -249,6 +249,7 @@ DEPENDENCIES
   monban
   monban-generators
   neat
+  omniauth
   omniauth-twitch
   pg (~> 0.15)
   pry

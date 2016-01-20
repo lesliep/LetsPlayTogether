@@ -10,6 +10,7 @@ gem 'monban'
 gem 'monban-generators'
 gem 'neat'
 gem 'figaro'
+gem 'omniauth'
 gem 'omniauth-twitch'
 
 gem 'jquery-rails'
