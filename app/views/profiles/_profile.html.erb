@@ -1,5 +1,6 @@
 <div class="profile">
-  <h2>DisplayName</h2>
-  <p>About</p>
+  <h2><%= profile.display_name %></h2>
+  <h3><%= profile.byline %></h3>
+  <p><%= profile.about %></p>
   <%= link_to 'Edit Profile', edit_profile_path(profile) %>
 </div>

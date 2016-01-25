@@ -1,5 +1,6 @@
 class Profile < ActiveRecord::Base
   belongs_to :user
+  has_many :social_media_accounts
 
   validates :display_name,
     presence: true,
