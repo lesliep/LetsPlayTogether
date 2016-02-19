@@ -11,7 +11,12 @@ gem 'monban-generators'
 gem 'neat'
 gem 'figaro'
 gem 'omniauth'
-gem 'omniauth-twitch'
+
+# Fork of omniauth-twitch; Gem owners have yet to merge this person's
+# pull request.
+gem 'omniauth-twitch', 
+  :git => "https://github.com/jtokoph/omniauth-twitch.git", 
+  :branch => "jtokoph-patch-1"
 
 gem 'jquery-rails'
 gem 'turbolinks'
