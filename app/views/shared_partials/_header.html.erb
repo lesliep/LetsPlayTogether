@@ -1,15 +1,19 @@
-<header class="navigation" role="banner">
-  <nav role="navigation">
-    <ul>
-      <% if signed_in? %>
-      <li class="nav-link"><%= link_to 'Log Out', session_path, method: :delete %></li>
-      <ul>
-        <li><%= link_to "Create a Profile", new_profile_path %></li>
+<header role="banner" class="navbar navbar-default">
+  <nav role="navigation" class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to "Lets Play Together", root_path, :class => "navbar-brand" %>
+    </div>
+
+    <div class="collapse navbar-collapse" id="lpt-navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
+          <li><%= link_to "Create a Profile", new_profile_path %></li>
+          <li class="nav-link"><%= link_to 'Log Out', session_path, method: :delete %></li>
+      <% else %>
+          <li class="nav-link"><%= link_to 'Sign Up', new_user_path %></li>
+        <li class="nav-link"><%= link_to 'Sign In', new_session_path %></li>
+      <% end %>
       </ul>
-    <% else %>
-      <li class="nav-link"><%= link_to 'Sign Up', new_user_path %></li>
-      <li class="nav-link"><%= link_to 'Sign In', new_session_path %></li>
-    <% end %>
-    </ul>
+    </div>
   </nav>
 </header>
