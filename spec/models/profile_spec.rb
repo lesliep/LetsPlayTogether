@@ -30,7 +30,4 @@ RSpec.describe Profile, :type => :model do
       expect(profile).to be_invalid
     end
   end
-
-  # website
-  # byline
 end

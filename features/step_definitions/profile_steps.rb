@@ -4,14 +4,11 @@ Given /^I have a profile$/ do
   create_profile
   expect(page).to have_content 'My Profiles'
 end
+
 When /^I click '([^']+)'$/ do |link_name|
   expect(page).to have_link link_name
 
   click_on link_name
-end
-
-Then /^I should have to verify my (.+) account$/ do |social_media|
-  pending
 end
 
 def create_profile

@@ -1,22 +1,22 @@
 module ProfileHelper
 
-  def social_media_button provider
-    if social_media.has_key? provider
-      link_to "Add #{provider}", "/auth/#{provider}"#auth_account_path(provider)
+  def unverified_social_media_button provider
+    if SocialMediaAccount.all_providers.include? provider
+      link_to "Add #{provider}", 
+        social_media_link(provider),
+        :class => "social_media_account #{provider} unverified"
     end
   end
 
   def verified_social_media_button account
-    # button
-    # text: account.username
-    # link: account.url
-    # class: account.provider
-    button_tag(account.username)
+    link_to "#{account.provider}: #{account.username}",
+            account.url,
+           :target => "_blank",
+           :class => "social_media_account #{account.provider} verified"
+
   end
 
-  def social_media
-    {
-      :twitch => ""
-    }
+  def social_media_link provider
+    "/auth/#{provider}"
   end
 end

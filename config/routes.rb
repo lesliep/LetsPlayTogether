@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :profiles
 
-  get "/auth/:provider/callback", to: "social_media_accounts#create"
+  get "/auth/:provider/callback" => "social_media_accounts#create"
+  get "/auth/failure" => "social_media_accounts#failure"
 
   constraints Monban::Constraints::SignedIn.new do
     root to: "dashboard#show", as: :dashboard

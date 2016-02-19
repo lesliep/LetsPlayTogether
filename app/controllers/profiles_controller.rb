@@ -33,6 +33,7 @@ class ProfilesController < ApplicationController
   end
 
   def set_profile
+    session[:profile_id] = params[:id] unless session[:profile_id] == params[:id]
     @profile = Profile.find(params[:id])
   end
 end

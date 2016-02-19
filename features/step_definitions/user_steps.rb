@@ -58,6 +58,10 @@ Then /^I should be signed in$/ do
   expect(page).to have_content 'You have successfully signed in.'
 end
 
+Then /^I should see '([^']+)'$/ do |content|
+  expect(page).to have_content content
+end
+
 
 def create_user
   visit '/'

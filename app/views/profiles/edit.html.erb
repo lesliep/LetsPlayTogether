@@ -8,9 +8,9 @@
 </div>
 
 <ul class="unverified social-media">
-  <li><%= social_media_button(:twitch) %></li>
-  <li><button class="youtube"></button></li>
-  <li><button class="twitter"></button></li>
+  <% @profile.unverified_social_media_accounts.each do |account| %>
+    <li><%= unverified_social_media_button(account) %></li>
+  <% end %>
 </ul>
 
 <%= render 'form' %>
