@@ -11,6 +11,7 @@ gem 'monban-generators'
 gem 'neat'
 gem 'figaro'
 gem 'omniauth'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 # Fork of omniauth-twitch; Gem owners have yet to merge this person's
 # pull request.
