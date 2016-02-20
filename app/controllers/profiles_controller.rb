@@ -11,6 +11,10 @@ class ProfilesController < ApplicationController
   def edit
   end
 
+  def index
+    @profiles = Profile.all
+  end
+
   def show
   end
 

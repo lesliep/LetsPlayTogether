@@ -4,8 +4,10 @@
     <h3><%= profile.byline %></h3>
     <p><%= profile.about %></p>
   </div>
-  <div class="panel-footer">
-    <%= link_to 'Edit Profile', edit_profile_path(profile) %>
-    <%= link_to 'Delete Profile', '#' %>
-  </div>
+  <% if can? :manage, profile %>
+    <div class="panel-footer">
+      <%= link_to 'Edit Profile', edit_profile_path(profile) %>
+      <%= link_to 'Delete Profile', '#' %>
+    </div>
+  <% end %>
 </div>
