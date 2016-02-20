@@ -6,8 +6,10 @@
   </div>
   <% if can? :manage, profile %>
     <div class="panel-footer">
-      <%= link_to 'Edit Profile', edit_profile_path(profile) %>
-      <%= link_to 'Delete Profile', '#' %>
+      <ul class="nav nav-pills nav-justified">
+        <li><%= link_to 'Edit Profile', edit_profile_path(profile) %></li>
+        <li><%= link_to 'Delete Profile', '#' %></li>
+      </ul>
     </div>
   <% end %>
 </div>
