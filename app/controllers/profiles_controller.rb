@@ -1,11 +1,17 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile, only: [:edit, :update]
+  before_action :set_profile_session, only: [:edit, :update]
+  before_action :set_profile, only: [:edit, :update, :show]
+
+  authorize_resource
 
   def new
     @profile = Profile.new
   end
 
   def edit
+  end
+
+  def show
   end
 
   def create
@@ -33,7 +39,10 @@ class ProfilesController < ApplicationController
   end
 
   def set_profile
-    session[:profile_id] = params[:id] unless session[:profile_id] == params[:id]
     @profile = Profile.find(params[:id])
+  end
+
+  def set_profile_session
+    session[:profile_id] = params[:id] unless session[:profile_id] == params[:id]
   end
 end
