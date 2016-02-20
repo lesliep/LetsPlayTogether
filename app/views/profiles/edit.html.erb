@@ -1,11 +1,9 @@
 <h1>Edit Profile</h1>
 <h2><%= @profile.display_name %></h2>
 
-<div class="verified social-media">
-  <ul>
-    <%= render @profile.social_media_accounts %>
-  </ul>
-</div>
+<ul class="verified social-media">
+  <%= render @profile.social_media_accounts %>
+</ul>
 
 <ul class="unverified social-media">
   <% @profile.unverified_social_media_accounts.each do |account| %>

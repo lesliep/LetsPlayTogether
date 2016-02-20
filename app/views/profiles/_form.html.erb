@@ -1,12 +1,18 @@
 <%= form_for @profile do |f| %>
-  <%= f.label :display_name %>
-  <%= f.text_field :display_name %>
+  <div class="form-group">
+    <%= f.label :display_name %>
+    <%= f.text_field :display_name, :class => "form-control" %>
+  </div>
 
-  <%= f.label :about %>
-  <%= f.text_area :about %>
+  <div class="form-group">
+    <%= f.label :about %>
+    <%= f.text_area :about, :class => "form-control" %>
+  </div>
 
-  <%= f.label :byline %>
-  <%= f.text_field :byline %>
+  <div class="form-group">
+    <%= f.label :byline %>
+    <%= f.text_field :byline, :class => "form-control" %>
+  </div>
 
   <%= f.submit %>
 <% end %>

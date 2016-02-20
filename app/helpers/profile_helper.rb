@@ -4,7 +4,7 @@ module ProfileHelper
     if SocialMediaAccount.all_providers.include? provider
       link_to "Add #{provider}", 
         social_media_link(provider),
-        :class => "social_media_account #{provider} unverified"
+        :class => "btn btn-default social_media_account #{provider} unverified"
     end
   end
 
@@ -12,7 +12,7 @@ module ProfileHelper
     link_to "#{account.provider}: #{account.username}",
             account.url,
            :target => "_blank",
-           :class => "social_media_account #{account.provider} verified"
+           :class => "btn btn-default social_media_account #{account.provider} verified"
 
   end
 
