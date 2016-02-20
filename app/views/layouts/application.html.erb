@@ -9,11 +9,15 @@
 <body>
 
   <%= render partial: 'shared_partials/header' %>
-  <% flash.each do |name, msg| %>
-    <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
-  <% end %>
 
   <div class="container">
+  <% flash.each do |name, msg| %>
+    <%= content_tag(:div, class: alert_classes(name)) do %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <span><%= msg %></span>
+      <% end %>
+  <% end %>
+
     <%= yield %>
   </div>
 
