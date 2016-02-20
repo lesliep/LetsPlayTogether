@@ -1,28 +1,34 @@
-<h1>Sign Up</h1>
-<%= form_for @user do |form| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <div class="page-header">
+      <h1>Sign Up</h1>
+    </div>
+    <%= form_for @user do |form| %>
 
-  <% if @user.errors.any? %>
-    <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
-    <ul>
-      <% @user.errors.full_messages.each do |error_message| %>
-        <li><%= error_message %></li>
-      <% end %>
-    </ul>
+      <% if @user.errors.any? %>
+        <%= pluralize(@user.errors.count, "error") %> prevented your account from being created:
+      <ul>
+        <% @user.errors.full_messages.each do |error_message| %>
+          <li><%= error_message %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+    <div class="form-group">
+      <%= form.label :email %>
+      <%= form.email_field :email, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :username %>
+      <%= form.text_field :username, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.label :password %>
+      <%= form.password_field :password, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+      <%= form.submit "Sign up" %>
+    </div>
   <% end %>
-
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
   </div>
-  <div>
-    <%= form.label :username %>
-    <%= form.text_field :username %>
-  </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  <div>
-    <%= form.submit "Sign up" %>
-  </div>
-<% end %>
+</div>
