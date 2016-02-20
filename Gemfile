@@ -19,6 +19,8 @@ gem 'omniauth-twitch',
   :git => "https://github.com/jtokoph/omniauth-twitch.git", 
   :branch => "jtokoph-patch-1"
 
+gem 'cancancan', '~> 1.10'
+
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
