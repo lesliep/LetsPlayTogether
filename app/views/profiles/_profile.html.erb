@@ -1,6 +1,11 @@
-<div class="profile">
-  <h2><%= profile.display_name %></h2>
-  <h3><%= profile.byline %></h3>
-  <p><%= profile.about %></p>
-  <%= link_to 'Edit Profile', edit_profile_path(profile) %>
+<div class="profile panel panel-default">
+  <div class="panel-body">
+    <h2><%= profile.display_name %></h2>
+    <h3><%= profile.byline %></h3>
+    <p><%= profile.about %></p>
+  </div>
+  <div class="panel-footer">
+    <%= link_to 'Edit Profile', edit_profile_path(profile) %>
+    <%= link_to 'Delete Profile', '#' %>
+  </div>
 </div>

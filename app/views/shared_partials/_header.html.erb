@@ -6,6 +6,7 @@
 
     <div class="collapse navbar-collapse" id="lpt-navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Home", root_path %></li>
         <% if signed_in? %>
           <li><%= link_to "Create a Profile", new_profile_path %></li>
           <li class="nav-link"><%= link_to 'Log Out', session_path, method: :delete %></li>
