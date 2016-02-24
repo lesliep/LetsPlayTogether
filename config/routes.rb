@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   resources :profiles
 
+  resources :friendships, only: [:create, :update, :destroy]
+
   get "/auth/:provider/callback" => "social_media_accounts#create"
   get "/auth/failure" => "social_media_accounts#failure"
 
