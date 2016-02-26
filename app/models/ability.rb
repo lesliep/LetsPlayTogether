@@ -28,7 +28,7 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
-      can :manage, Profile, :user_id => user.id
-      can :read, Profile
+      can :manage, User, :user_id => user.id
+      can :read, User
   end
 end

@@ -1,0 +1,15 @@
+  <div class="page-header">
+    <h1><%= @profile.display_name %></h1>
+  </div>
+<% if @profile.filled? %>
+  <% render @profile %>
+<% else %>
+    <div class="row">
+      <p>This user hasn't filled out their profile yet.</p>
+    </div>
+<% end %>
+
+
+<ul class="verified social-media">
+  <%= render @social_media_accounts %>
+</ul>

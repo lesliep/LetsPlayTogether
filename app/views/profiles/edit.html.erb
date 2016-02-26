@@ -2,11 +2,11 @@
 <h2><%= @profile.display_name %></h2>
 
 <ul class="verified social-media">
-  <%= render @profile.social_media_accounts %>
+  <%= render @social_media_accounts %>
 </ul>
 
 <ul class="unverified social-media">
-  <% @profile.unverified_social_media_accounts.each do |account| %>
+  <% @unverified_social_media_accounts.each do |account| %>
     <li><%= unverified_social_media_button(account) %></li>
   <% end %>
 </ul>

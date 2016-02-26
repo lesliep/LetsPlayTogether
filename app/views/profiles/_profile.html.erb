@@ -1,15 +1,15 @@
-<div class="profile panel panel-default">
-  <div class="panel-body">
-    <h2><%= profile.display_name %></h2>
-    <h3><%= profile.byline %></h3>
-    <p><%= profile.about %></p>
+<% if @profile.byline %>
+  <h2><%= @profile.byline %></h2>
+<% end %>
+<% if @profile.website %>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-2">Website</div>
+    <div class="well col-md-6"><%= @profile.website %></div>
   </div>
-  <% if can? :manage, profile %>
-    <div class="panel-footer">
-      <ul class="nav nav-pills nav-justified">
-        <li><%= link_to 'Edit Profile', edit_profile_path(profile) %></li>
-        <li><%= link_to 'Delete Profile', '#' %></li>
-      </ul>
-    </div>
-  <% end %>
-</div>
+<% end %>
+<% if @profile.about %>
+  <div class="row">
+    <div class="col-md-2 col-md-offset-2">About</div>
+    <div class="well col-md-6"><%= @profile.about %></div>
+  </div>
+<% end %>

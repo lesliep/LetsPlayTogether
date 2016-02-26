@@ -1,30 +1,9 @@
 class ProfilesController < ApplicationController
-  before_action :set_profile_session, only: [:edit, :update]
-  before_action :set_profile, only: [:edit, :update, :show]
-
-  authorize_resource
-
-  def new
-    @profile = Profile.new
-  end
+  before_action :set_profile, only: [:edit, :update]
 
   def edit
-  end
-
-  def index
-    @profiles = Profile.all
-  end
-
-  def show
-  end
-
-  def create
-    @profile = current_user.profiles.build(profile_params)
-    if @profile.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @social_media_accounts = current_user.social_media_accounts
+    @unverified_social_media_accounts = current_user.unverified_social_media_accounts
   end
 
   def update
@@ -43,10 +22,7 @@ class ProfilesController < ApplicationController
   end
 
   def set_profile
-    @profile = Profile.find(params[:id])
+    @profile ||= User.find_by_id(params[:user_id]).profile
   end
 
-  def set_profile_session
-    session[:profile_id] = params[:id] unless session[:profile_id] == params[:id]
-  end
 end

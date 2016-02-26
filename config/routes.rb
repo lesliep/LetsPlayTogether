@@ -4,9 +4,9 @@ require "monban/constraints/signed_out"
 Rails.application.routes.draw do
 
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
-
-  resources :profiles
+  resources :users do
+    resource :profile, only: [:edit, :update]
+  end
 
   resources :friendships, only: [:create, :update, :destroy]
 
