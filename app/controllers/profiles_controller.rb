@@ -3,7 +3,8 @@ class ProfilesController < ApplicationController
 
   def edit
     @social_media_accounts = current_user.social_media_accounts
-    @unverified_social_media_accounts = current_user.unverified_social_media_accounts
+    @unverified_social_media_accounts =
+      current_user.unverified_social_media_accounts
   end
 
   def update
@@ -17,12 +18,10 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:about, :website, :byline,
-                                    :display_name )
+    params.require(:profile).permit(:about, :website, :byline, :display_name)
   end
 
   def set_profile
     @profile ||= User.find_by_id(params[:user_id]).profile
   end
-
 end

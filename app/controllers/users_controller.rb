@@ -36,11 +36,10 @@ class UsersController < ApplicationController
   end
 
   def build_profile
-    @user.create_profile(:display_name => @user.username)
+    @user.create_profile(display_name: @user.username)
   end
 
   def set_user
     @user = User.find_by_id(params[:id])
   end
 end
-

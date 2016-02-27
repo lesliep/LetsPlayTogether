@@ -8,17 +8,17 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
-      flash[:notice] = "You have successfully signed in."
+      flash[:notice] = 'You have successfully signed in.'
       redirect_to root_path
     else
-      flash[:notice] = "Wrong email or password."
+      flash[:notice] = 'Wrong email or password.'
       render :new
     end
   end
 
   def destroy
     sign_out
-    flash[:notice] = "Successfully signed out."
+    flash[:notice] = 'Successfully signed out.'
     redirect_to root_path
   end
 
@@ -28,4 +28,3 @@ class SessionsController < ApplicationController
     params.require(:session).permit(:email, :password)
   end
 end
-
